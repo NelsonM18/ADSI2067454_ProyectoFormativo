@@ -1,5 +1,5 @@
 ---
-# Objectivo General.
+# <span style: "color blue">Objectivo General.</span>
 ---
 Desarrollar un sistema de información que permita la gestion del control de acceso de vigilantes, profesores, personal administrativo y estudiantes a la institución educativa, pudiendo registrar a todo el personal que ingrese a la institución y generando un historial, permitiendo tener el mejor control y seguridad posible.
 
