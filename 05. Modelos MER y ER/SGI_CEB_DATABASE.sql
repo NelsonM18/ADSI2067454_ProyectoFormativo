@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `SGI_CEB`.`usuario` (
   `segundo_nombre` VARCHAR(45) NULL,
   `primer_apellido` VARCHAR(45) NOT NULL,
   `segundo_apellido` VARCHAR(45) NULL,
-  `numero_documento` INT NOT NULL,
+  `numero_documento` VARCHAR(45) NOT NULL,
   `fecha_nacimiento` DATE NOT NULL,
   `genero` VARCHAR(45) NOT NULL,
   `contraseña_usuario` VARCHAR(45) NOT NULL,
