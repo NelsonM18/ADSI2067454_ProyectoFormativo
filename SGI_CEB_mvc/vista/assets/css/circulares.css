@@ -1,0 +1,31 @@
+*{
+
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+.main{
+
+  height: 650px;
+
+}
+
+.circulares1{
+
+  height: 50%;
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.carpetas{
+
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+#pie{
+
+  margin: 0px;
+}

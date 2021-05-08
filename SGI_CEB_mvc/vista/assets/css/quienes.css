@@ -1,0 +1,26 @@
+*{
+
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+.main_2{
+
+  height: 650px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.main_2 img{
+
+  border: 1px solid black;
+  border-radius: 2%;
+  height: 300px;
+
+}
+
+#pie{
+
+  margin: 0px;
+}

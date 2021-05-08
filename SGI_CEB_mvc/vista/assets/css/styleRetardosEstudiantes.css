@@ -1,0 +1,18 @@
+.login-box input[type="text"]{
+	border: none;
+	border-bottom: 1px solid #000000;
+	background: none;
+	height: 40px;
+	color: #000000;
+	font-size: 16px;
+	outline: none;
+    text-align: center;
+}
+
+.login-box P{
+    text-align: center;
+}
+
+.num_doc{
+    text-align: center;
+}

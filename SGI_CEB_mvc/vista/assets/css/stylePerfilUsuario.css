@@ -1,0 +1,196 @@
+/*Margenes Y Bordes*/
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*Color de Texto, Tipografia e Imagen de Fondo*/
+body {
+    color: #404040;
+    font-family: "Arial", Segoe UI, Tahoma, sans-serifl, Helvetica Neue, Helvetica;
+    background-image: url("../Imagenes/ciudadela_logo.png");
+}
+
+
+/*ACOMODO MENU CABECERA*/
+/*Texto Derecho Opciones*/
+
+
+/*Centrado*/
+.contenedor {
+    width: 98%;
+    margin: auto;
+}
+
+/*Texto Izquierdo Titulo*/
+.contenedor a h1{
+    font-family: 'Times New Roman', Times, serif;
+    float: left;
+    margin-top: 6px;
+    padding: 10px;
+}
+
+header a{
+    color: #ffffff;
+    text-decoration: none;
+    user-select: none;
+}
+
+/*Contenedor Cabecera*/
+
+
+/*Color de los Iconos
+.boton{
+    color: #ffffff;
+}
+
+.boton:hover{
+    color: rgb(99, 99, 99);
+}*/
+
+
+
+
+/*MENU LATERAL*/
+#Menu {
+    width: 12.5rem;
+    float: left;
+}
+
+/*Color y acomodo*/
+#Menu a {
+    background-color: #FFFFFF80;
+    color: black;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    transition: all 500ms ease;
+    border-bottom: 11px solid transparent;
+}
+
+/*Color Seleccion*/
+#Menu a:hover {
+    background-color: #ccc;
+    border: 3px solid red;
+    border-radius: 20px;
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 8px 25px 0 rgba(0,0,0,0.19);
+}
+
+/*Acomodo Secciones Menu Lateral*/
+#Menu h3{
+    margin-top: 2rem;
+    padding-left: 10px;
+}
+
+
+
+/*CENTRO*/
+
+/*Acomodo de Portada, Imagen y Perfil*/
+.seccion-perfil-usuario .perfil-usuario-body,
+.seccion-perfil-usuario {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Acomodo Portada*/
+.seccion-perfil-usuario .perfil-usuario-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+.seccion-perfil-usuario .perfil-usuario-portada {
+    display: block;
+    position: relative;
+    width: 90%;
+    height: 17rem;
+    background: linear-gradient(45deg, #D9A05B, #f3f0d0);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 8px 25px 0 rgba(0,0,0,0.19);
+}
+
+/*Acomodo Imagen Perfil Portada*/
+.seccion-perfil-usuario .perfil-usuario-avatar {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid #FFFFFF;
+    background-color: #DFE5F2;
+    border-radius: 50%;
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 8px 25px 0 rgba(0,0,0,0.19);
+    position: absolute;
+    bottom: -40px;
+    left: calc(50% - 90px);
+    z-index: 1;
+}
+
+.seccion-perfil-usuario .perfil-usuario-avatar img {
+    width: 100%;
+    position: relative;
+    border-radius: 50%;
+}
+
+/*Acomodo Biografia*/
+.seccion-perfil-usuario .perfil-usuario-body {
+    width: 70%;
+    position: relative;
+    max-width: 750px;
+}
+
+.seccion-perfil-usuario .perfil-usuario-footer,
+.seccion-perfil-usuario .perfil-usuario-bio {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 8px 25px 0 rgba(0,0,0,0.19);
+    background-color: #fff;
+    border-radius: 15px;
+    width: 100%;
+}
+
+/*Acomodo Titulo Biografia*/
+.seccion-perfil-usuario .perfil-usuario-body .titulo {
+    display: block;
+    width: 100%;
+    font-size: 1.75em;
+    margin-bottom: 0.5rem;
+}
+
+/*Acomodo Texto Biografia*/
+.seccion-perfil-usuario .perfil-usuario-body .texto {
+    color: #848484;
+    font-size: 0.95em;
+}
+
+
+.seccion-perfil-usuario .perfil-usuario-bio {
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+/*Acomodo Lista de Datos biografia*/
+.seccion-perfil-usuario .lista-datos {
+    width: 50%;
+    list-style: none;
+}
+
+.seccion-perfil-usuario .lista-datos li {
+    padding: 5px 0;
+}
+
+/*Acomodo Iconos Lista de Datos biografia*/
+.seccion-perfil-usuario .lista-datos li>.icono {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+

@@ -1,0 +1,63 @@
+#seccion_tabla_historial{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+table{
+    width: 80%;
+    margin-top: 3%;
+    Font-family: Arial;
+}
+
+th{
+    background-color: #D9A05B;
+    color: #ffffff;
+}
+
+tr:nth-child(even){
+    background-color: #eee;
+}
+tr:nth-child(odd){
+    background-color: #fff;
+}
+
+table, tr, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 15px;
+}
+
+#seccion_inicio_historial{
+    width: 100%;
+}
+
+
+#contenedor_inicio_historial{
+    width: 100%;
+    /* display: flex; */
+    word-wrap: break-word;
+    padding-top: 100px;
+        
+        
+    
+}
+    
+#seccion_inicio_historial{  
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    margin: auto;
+    display: inline-block;
+    box-shadow: 0 8px 6px -6px rgb(165, 165, 165);
+    background-image: url("../img/ciudadela_logo.png");
+
+}
+    
+#seccion_inicio_historial  p{
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-text-fill-color: rgb(0, 0, 0);
+   
+}

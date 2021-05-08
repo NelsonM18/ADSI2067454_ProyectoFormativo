@@ -1,0 +1,31 @@
+
+#seccion_tabla{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+table{
+    width: 80%;
+    margin-top: 3%;
+    Font-family: Arial;
+}
+
+th{
+    background-color: #D9A05B;
+    color: #ffffff;
+}
+
+tr:nth-child(even){
+    background-color: #eee;
+}
+tr:nth-child(odd){
+    background-color: #fff;
+}
+
+table, tr, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 15px;
+}
