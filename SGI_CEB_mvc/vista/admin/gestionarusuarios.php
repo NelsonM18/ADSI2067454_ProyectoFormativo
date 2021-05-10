@@ -5,7 +5,7 @@
 
 	<div class="contenedor" id="contenedor_chingon">
 	<section id="seccion_inicio">
-		
+
 			<p>SISTEMA DE GESTIÓN DE INGRESO</p>
 			<p>CIUDADELA EDUCATIVA DE BOSA</p>
 			<br>
@@ -16,7 +16,7 @@
     </section>
         <br>
 	<section id="seccion_tabla">
-        
+
     <table class="tablaUsuarios">
         <tr>
             <th>Primer Nombre</th>
@@ -31,23 +31,23 @@
             <th>Acción</th>
         </tr>
 
-        
-        
 
-      
+
+
+
         <?php
         while ($campo = $resListado->fetch_array()) { ?>
-            
+
         <tr>
             <td><?php echo $campo["primer_nombre"]; ?></td>
             <td><?php echo $campo["segundo_nombre"]; ?></td>
             <td><?php echo $campo["primer_apellido"]; ?></td>
             <td><?php echo $campo["segundo_apellido"]; ?></td>
-            <td><?php echo $campo["genero_id_genero"]; ?></td>
+            <td><?php echo $campo["genero"]; ?></td>
             <td><?php echo $campo["num_documento"]; ?></td>
-            <td><?php echo $campo["tipo_documento_id_tipo_documento"]; ?></td>
-            <td><?php echo $campo["grupo_sanguineo_id_grupo_sanguineo"]; ?></td>
-            <td><?php echo $campo["tipo_persona_id_tipo_persona"]; ?></td>
+            <td><?php echo $campo["tipo_documento"]; ?></td>
+            <td><?php echo $campo["grupo_sanguineo"]; ?></td>
+            <td><?php echo $campo["tipo_persona"]; ?></td>
             <td></td>
         </tr>
 
@@ -59,5 +59,5 @@
 
 	</div>
 
-	
+
 	<?php require_once 'includes/footer.php';?>
