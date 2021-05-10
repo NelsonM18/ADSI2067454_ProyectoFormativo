@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-05-2021 a las 21:41:28
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 8.0.1
+-- Tiempo de generación: 10-05-2021 a las 19:38:01
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -78,9 +78,9 @@ CREATE TABLE `genero` (
 --
 
 INSERT INTO `genero` (`id_genero`, `genero`) VALUES
-(1, 'masculino'),
-(2, 'femenino'),
-(3, 'indefinido');
+(1, 'Masculino'),
+(2, 'Femenino'),
+(3, 'Indefinido');
 
 -- --------------------------------------------------------
 
@@ -261,8 +261,8 @@ CREATE TABLE `tipo_persona` (
 --
 
 INSERT INTO `tipo_persona` (`id_tipo_persona`, `tipo_persona`) VALUES
-(1, 'interno'),
-(2, 'externo');
+(1, 'Institucional'),
+(2, 'Externo');
 
 -- --------------------------------------------------------
 
