@@ -1,4 +1,6 @@
+<?php include("../../controlador/controlador.php"); ?>
 <?php require_once 'includes/cabeceraConSesionAdmin.php';?>
+
 
 
 	<div class="contenedor" id="contenedor_chingon">
@@ -28,18 +30,29 @@
             <th>Tipo Persona</th>
             <th>Acción</th>
         </tr>
+
+        
+        
+
+      
+        <?php
+        while ($campo = $resListado->fetch_array()) { ?>
+            
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><?php echo $campo["primer_nombre"]; ?></td>
+            <td><?php echo $campo["segundo_nombre"]; ?></td>
+            <td><?php echo $campo["primer_apellido"]; ?></td>
+            <td><?php echo $campo["segundo_apellido"]; ?></td>
+            <td><?php echo $campo["genero_id_genero"]; ?></td>
+            <td><?php echo $campo["num_documento"]; ?></td>
+            <td><?php echo $campo["tipo_documento_id_tipo_documento"]; ?></td>
+            <td><?php echo $campo["grupo_sanguineo_id_grupo_sanguineo"]; ?></td>
+            <td><?php echo $campo["tipo_persona_id_tipo_persona"]; ?></td>
             <td></td>
         </tr>
+
+        <?php } ?>
+
     </table>
 
 	</section>

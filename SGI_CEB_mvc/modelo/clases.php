@@ -25,7 +25,15 @@ class clases extends conexion{  //Se crea la clase clases que hereda de conexion
     $consulta = $this->conexion->query($sql) or die('Usuario no existe');
     return $consulta;
 
-  } 
+  }
+
+  public function listarPersonas(){ //Funcion para listar las personas del sistema
+
+    $sql="select * from persona";
+    $consulta = $this->conexion->query($sql) or die('Usuario no existe');
+    return $consulta;
+
+  }
 
 
 }

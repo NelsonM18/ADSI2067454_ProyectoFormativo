@@ -1,5 +1,7 @@
 <?php
-include("../modelo/clases.php");
+
+include($_SERVER['DOCUMENT_ROOT']."/SGI_CEB_mvc/modelo/clases.php");
+
 
 if(isset($_REQUEST['login'])) {  //Entrada de datos del form ingresar
     
@@ -27,5 +29,20 @@ if(isset($_REQUEST['login'])) {  //Entrada de datos del form ingresar
         }
     }
 }
+
+
+    //Seccion de listar personas para el Administrador
+
+    $objeto2 = new clases;
+
+    $resListado = $objeto2->listarPersonas();
+
+    $rowListado = $resListado->fetch_array();
+
+
+
+
+
+
 
 ?>
