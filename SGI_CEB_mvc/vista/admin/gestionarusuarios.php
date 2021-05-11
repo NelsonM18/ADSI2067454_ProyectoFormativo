@@ -5,13 +5,13 @@
 
 	<div class="contenedor" id="contenedor_chingon">
 	<section id="seccion_inicio">
-		
+
 			<p>SISTEMA DE GESTIÓN DE INGRESO</p>
 			<p>CIUDADELA EDUCATIVA DE BOSA</p>
 			<br>
 			<p>ADMINISTRADOR</p>
 			<img src="assets/img/admin-icon.png" alt="admin-icon">
-			<p>GESTIÓN USUARIOS</p>
+			<p>GESTIÓN PERSONAS</p>
 			<br>
     </section>
         <br>
@@ -19,9 +19,8 @@
 
 
     <a href="crearPersona.php"><button class="btn-crearP">Crear Persona</button></a>
-    <a href="crearU.php"><button class="btn-crearU">Crear Usuario</button></a>
 
-        
+
     <table class="tablaUsuarios">
         <tr>
             <th>Primer Nombre</th>
@@ -33,16 +32,16 @@
             <th>Tipo Documento</th>
             <th>Grupo Sanguineo</th>
             <th>Tipo Persona</th>
-            <th>Acción</th>
+            <th colspan="2">Acción</th>
         </tr>
 
-        
-        
 
-      
+
+
+
         <?php
         while ($campo = $resListado->fetch_array()) { ?>
-            
+
         <tr>
         <td><?php echo $campo["primer_nombre"]; ?></td>
             <td><?php echo $campo["segundo_nombre"]; ?></td>
@@ -53,7 +52,8 @@
             <td><?php echo $campo["tipo_documento"]; ?></td>
             <td><?php echo $campo["grupo_sanguineo"]; ?></td>
             <td><?php echo $campo["tipo_persona"]; ?></td>
-            <td></td>
+            <td><a href="#">Editar</a></td>
+						<td><a href="#">Inactivar</a></td>
         </tr>
 
         <?php } ?>
@@ -64,5 +64,5 @@
 
 	</div>
 
-	
+
 	<?php require_once 'includes/footer.php';?>

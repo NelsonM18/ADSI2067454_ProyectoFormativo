@@ -3,7 +3,7 @@
 
 	<div class="contenedor" id="contenedor_chingon">
 	<section id="seccion_inicio">
-		
+
 			<p>SISTEMA DE GESTIÓN DE INGRESO</p>
 			<p>CIUDADELA EDUCATIVA DE BOSA</p>
 			<br>
@@ -19,17 +19,21 @@
 	<section id="seccion_inicio_2">
 
 			<article>
-				<a href="gestionarusuarios.php"><h3>Gestionar Usuarios</h3></a>	
-				<a href="gestionarusuarios.php"><img src="assets/img/usuario.png" alt="usuario_imagen" id="usuarios-img"></a>	
+				<a href="gestionarusuarios.php"><h3>Gestionar Personas</h3></a>
+				<a href="gestionarusuarios.php"><img src="assets/img/user.png" alt="usuario_imagen" id="usuarios-img"></a>
 			</article>
 			<article>
-				<a href="gestionarIngresos.php"><h3>Gestionar Ingresos</h3></a>	
-				<a href="gestionarIngresos.php"><img src="assets/img/gestionUsuarioWallpaper.png" alt=""></a>	
+				<a href="gestionarU.php"><h3>Gestionar Usuarios</h3></a>
+				<a href="gestionarU.php"><img src="assets/img/userU.png" alt="usuario_imagen" id="usuarios-img"></a>
+			</article>
+			<article>
+				<a href="gestionarIngresos.php"><h3>Gestionar Ingresos</h3></a>
+				<a href="gestionarIngresos.php"><img src="assets/img/gestionUsuarioWallpaper.png" alt=""></a>
 			</article>
 
 	</section>
 
 	</div>
 
-	
+
 	<?php require_once 'includes/footer.php';?>
