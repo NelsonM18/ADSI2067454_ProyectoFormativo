@@ -3,6 +3,7 @@
 @import url(gestionarusuarios.css);
 @import url(stylePerfilAdmin.css);
 @import url(styleHistorialAdmin.css);
+@import url(crearU.css);
 *{
     margin: 0;
     padding: 0;
@@ -45,12 +46,12 @@ header a{
     /* display: flex; */
     word-wrap: break-word;
     padding-top: 100px;
-    
-    
+
+
 
 }
 
-#seccion_inicio{  
+#seccion_inicio{
     width: 100%;
     background-color: rgba(255, 255, 255, 0);
     text-align: center;
@@ -101,7 +102,7 @@ header a{
 
 
 @media (max-width: 665px){
-    
+
     #contenedor_chingon{
         flex-direction: column;
         align-items: center;
@@ -115,5 +116,5 @@ header a{
         flex-direction: column;
         align-items: center;
     }
-    
+
 }
