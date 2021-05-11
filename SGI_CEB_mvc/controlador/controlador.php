@@ -37,7 +37,7 @@ if(isset($_REQUEST['login'])) {  //Entrada de datos del form ingresar
 
     $resListado = $objeto2->listarPersonas();
 
-    $rowListado = $resListado->fetch_array();
+    
 
 
 

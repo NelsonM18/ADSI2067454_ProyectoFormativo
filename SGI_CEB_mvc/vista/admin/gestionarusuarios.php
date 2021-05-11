@@ -5,7 +5,7 @@
 
 	<div class="contenedor" id="contenedor_chingon">
 	<section id="seccion_inicio">
-
+		
 			<p>SISTEMA DE GESTIÓN DE INGRESO</p>
 			<p>CIUDADELA EDUCATIVA DE BOSA</p>
 			<br>
@@ -17,6 +17,11 @@
         <br>
 	<section id="seccion_tabla">
 
+
+    <a href="crearPersona.php"><button class="btn-crearP">Crear Persona</button></a>
+    <a href="crearU.php"><button class="btn-crearU">Crear Usuario</button></a>
+
+        
     <table class="tablaUsuarios">
         <tr>
             <th>Primer Nombre</th>
@@ -31,15 +36,15 @@
             <th>Acción</th>
         </tr>
 
+        
+        
 
-
-
-
+      
         <?php
         while ($campo = $resListado->fetch_array()) { ?>
-
+            
         <tr>
-            <td><?php echo $campo["primer_nombre"]; ?></td>
+        <td><?php echo $campo["primer_nombre"]; ?></td>
             <td><?php echo $campo["segundo_nombre"]; ?></td>
             <td><?php echo $campo["primer_apellido"]; ?></td>
             <td><?php echo $campo["segundo_apellido"]; ?></td>
@@ -59,5 +64,5 @@
 
 	</div>
 
-
+	
 	<?php require_once 'includes/footer.php';?>

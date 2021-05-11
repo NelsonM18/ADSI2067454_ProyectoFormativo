@@ -13,7 +13,7 @@
 		<div class="contenedor"> 
 			<a href="indexadmin.php"><h1>SGI CEB</h1></a>
 			<input type="checkbox" id="menu-roll">
-			<label for="menu-roll"><img src="../vista/assets/img/menu-roll.png" alt=""></label>
+			<label for="menu-roll"><img src="../assets/img/menu-roll.png" alt=""></label>
 			<nav class="menu">
 				<ul>
 					<a href="indexadmin.php"><li>Inicio</li></a>

@@ -3,6 +3,9 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
     
 }
 
@@ -28,4 +31,14 @@ table, tr, th, td{
     border: 1px solid black;
     border-collapse: collapse;
     padding: 15px;
+}
+
+
+.btn-crearP, .btn-crearU{
+    margin: 10px;
+    padding: 15px;
+    background-color: #D9A05B;
+    cursor: pointer;
+    text-decoration: none;
+    flex: none;
 }

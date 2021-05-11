@@ -1,5 +1,5 @@
 <?php require_once 'includes/cabeceraConSesionAdmin.php'; ?>
-<script type="text/javascript" src="assets/appUsuario.js"></script>
+<script type="text/javascript" src="assets/scripts/validarCrearUsuario.js"></script>
 
 <div id="contenedor_usuario">
   <div id="formulario">

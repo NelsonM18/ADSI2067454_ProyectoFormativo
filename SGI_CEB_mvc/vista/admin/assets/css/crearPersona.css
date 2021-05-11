@@ -1,0 +1,53 @@
+#seccion_formulario form h1{
+
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 3%;
+
+}
+#seccion_formulario {
+
+    padding: 40%;
+    padding-top: 0;
+    text-align: center;
+
+    
+
+}
+
+#seccion_formulario form label{
+
+display: block;}
+
+#seccion_formulario form input{
+
+    text-align: center;
+    width: 100%;	
+    margin-bottom: 20px;
+    font-size: 25px;
+
+
+
+}
+#seccion_formulario form select{
+
+    text-align: center;
+    width: 100%;	
+    margin-bottom: 20px;
+    font-size: 20px;
+
+
+
+}
+
+.btn-submit{
+    background-color: #D9A05B;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 5%;
+
+
+
+}
+

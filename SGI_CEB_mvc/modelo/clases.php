@@ -11,7 +11,7 @@ class clases extends conexion{  //Se crea la clase clases que hereda de conexion
 
   public function crear($a, $b, $c, $d, $e){ //Funcion de la clase Clases que sirve para insertar un usuario nuevo a la base de datos
 
-    $sql = "INSERT INTO persona(num_documento,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,fecha_nacimiento,genero)
+    $sql = "INSERT INTO persona(numero_documento,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,fecha_nacimiento,genero)
     VALUES('$a','$b','$c','$d','$e')";
     $consulta = $this->conexion->query($sql) or die('Usuario no creado');
     return $consulta;
