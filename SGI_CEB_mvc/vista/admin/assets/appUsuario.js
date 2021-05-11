@@ -8,7 +8,7 @@ function validar(){
   rol = document.getElementById('rol').value;
   documento = document.getElementById('documento').value;
 
-  if (expresion.test(correo) && correo==="") {
+  if (!expresion.test(correo) || correo==="") {
 
     alert('El correo no cumple con los requisitos');
     return false;
@@ -18,11 +18,11 @@ function validar(){
     alert('El campo contraseña es obligatorio');
     return false;
 
-  }else if (rol==0) {
+  }else if (rol=="0" || rol==="") {
 
     alert('Se debe seleccionar un rol');
     return false;
-  }else if (isNaN(documento)){
+  }else if (isNaN(documento) || documento===""){
 
     alert('Solo se permite ingresar numeros');
     return false;
