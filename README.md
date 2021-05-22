@@ -1,13 +1,16 @@
 # Objectivo General.
 ---
-Desarrollar un sistema de información que permita la gestion del control de acceso de vigilantes, profesores, personal administrativo y estudiantes a la institución educativa, pudiendo registrar a todo el personal que ingrese a la institución y generando un historial, permitiendo tener el mejor control y seguridad posible.
+Diseñar e implementar un sistema de información que apoye la gestión de control en el acceso a las instalaciones del colegio Ciudadela Educativa de Bosa
 
 
 # Planteamiento del Problema.
 ---
-En la institución Ciudadela Educativa de Bosa, distrital, que maneja la jornada mañana y tarde, se presenta el siguiente problema. La institución maneja el ingreso de manera poco segura y eficaz, debido a que se abren las puertas en una hora específica y la gente ingresa sin ser validados. Esto genera inseguridad debido a que es fácil para alguien entrar a la institución sin ser de esta. Sin olvidar que también presentan un método de gestion de llegadas tarde en los estudiantes poco efectiva, debido a que esta funciona mediante un sello en una libreta del estudiante, generando así, pérdida de información y poca seguridad.
+En la institución Colegio Distrital Ciudadela Educativa de Bosa que maneja la jornada mañana y tarde, tiene un control de seguridad en el ingreso a la institución poco
+segura y eficaz, debido a que se abren las puertas en una hora específica y las personas ingresa sin ser validados.
 
-Actualmente la institución no maneja ningún sistema de información, solo utilizan el apoyo de maestros en la entrada y todo se ejecuta de manera visual. La institución cuenta con carnets de identificación para los estudiantes, sin embargo, estos no son utilizados a la hora del ingreso.​
+Esto genera inseguridad debido a que es fácil para alguien entrar a la institución sin ser de esta. Sin olvidar que también presentan un método de gestión de llegadas
+tarde en los estudiantes poco efectiva, debido a que esta funciona mediante un sello en una libreta del estudiante, generando así, pérdida de información y poca
+seguridad.​
 
 
 # Pregunta Problema.
