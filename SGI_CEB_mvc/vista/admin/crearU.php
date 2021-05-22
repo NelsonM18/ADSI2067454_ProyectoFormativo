@@ -1,4 +1,6 @@
 <?php require_once 'includes/cabeceraConSesionAdmin.php'; ?>
+<?php include("../../controlador/seguridad.php"); ?>
+
 <script type="text/javascript" src="assets/scripts/validarCrearUsuario.js"></script>
 
 <div id="contenedor_usuario">

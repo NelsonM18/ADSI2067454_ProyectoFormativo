@@ -1,4 +1,7 @@
 <?php require_once 'includes/cabeceraConSesionAdmin.php';?>
+<?php include("../../controlador/controlador.php"); ?>
+<?php include("../../controlador/seguridad.php"); ?>
+
 
 
 	<div class="contenedor" id="contenedor_inicio_historial">
@@ -8,7 +11,7 @@
 			<p>SISTEMA DE GESTIÓN DE INGRESO</p>
 			<p>CIUDADELA EDUCATIVA DE BOSA</p>
 			<br>
-			<p>Nombre de usuario</p>
+			<p><?php echo "Bienvenido, ".$_SESSION["usuario"]["primer_nombre"];?></p>
 			<p>Ingresos Registrados</p>
             <img src="../assets/img/historial_vector.png" alt="admin-icon">
 			<br>

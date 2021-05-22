@@ -1,5 +1,7 @@
 <?php include("../../controlador/controlador.php"); ?>
 <?php require_once 'includes/cabeceraConSesionAdmin.php';?>
+<?php include("../../controlador/seguridad.php"); ?>
+
 
 
 
@@ -36,14 +38,14 @@
 
 
       <?php
-      while ($campo = $resListado->fetch_array()) { ?>
+      while ($campo = $resListado2->fetch_array()) { ?>
 
         <tr>
-          <td><?php /*echo $campo["primer_nombre"];*/ ?></td>
-          <td><?php /*echo $campo["segundo_nombre"]; */?></td>
-          <td><?php /*echo $campo["primer_apellido"]; */?></td>
-          <td><?php /*echo $campo["do_apellido"]; */?></td>
-          <td><?php /*echo $campo[""]; */?></td>
+          <td><?php echo $campo["correo_usuario"]; ?></td>
+          <td><?php echo $campo["rol"];?></td>
+          <td><?php echo $campo["persona_num_documento"];?></td>
+          <td><?php echo $campo["primer_nombre"];?></td>
+          <td><?php echo $campo["primer_apellido"];?></td>
           <td><a href="#">Editar</a></td>
           <td><a href="#">Inactivar</a></td>
         </tr>

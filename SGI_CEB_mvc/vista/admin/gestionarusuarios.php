@@ -1,5 +1,7 @@
 <?php include("../../controlador/controlador.php"); ?>
 <?php require_once 'includes/cabeceraConSesionAdmin.php';?>
+<?php include("../../controlador/seguridad.php"); ?>
+
 
 
 
@@ -53,7 +55,7 @@
             <td><?php echo $campo["grupo_sanguineo"]; ?></td>
             <td><?php echo $campo["tipo_persona"]; ?></td>
             <td><a href="#">Editar</a></td>
-						<td><a href="#">Inactivar</a></td>
+			<td><a href="#">Inactivar</a></td>
         </tr>
 
         <?php } ?>

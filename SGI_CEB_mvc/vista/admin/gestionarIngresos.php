@@ -1,4 +1,7 @@
 <?php require_once 'includes/cabeceraConSesionAdmin.php';?>
+<?php include("../../controlador/controlador.php"); ?>
+<?php include("../../controlador/seguridad.php"); ?>
+
 
 
 	<div class="contenedor" id="contenedor_chingon">
@@ -17,17 +20,26 @@
         
     <table class="tablaIngresos">
     <tr>
+            <th>Número de documento</th>
             <th>Hora Ingreso</th>
             <th>Fecha Ingreso</th>
             <th>Comentario</th>
-            <th>Acción</th>
+            <th colspan="2">Acción</th>
         </tr>
+        <?php
+        while ($campo = $resListadoAdminHistorial->fetch_array()) { ?>
+
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+        <td><?php echo $campo["persona_num_documento"]; ?></td>
+            <td><?php echo $campo["hora_ingreso"]; ?></td>
+            <td><?php echo $campo["fecha_ingreso"]; ?></td>
+            <td><?php echo $campo["comentario_historial"]; ?></td>
+
+                        <td><a href="#">Editar</a></td>
+						<td><a href="#">Inactivar</a></td>
         </tr>
+
+        <?php } ?>
     </table>
 
 	</section>

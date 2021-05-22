@@ -1,4 +1,6 @@
 <?php require_once 'includes/cabeceraConSesionAdmin.php';?>
+<?php include("../../controlador/seguridad.php"); ?>
+
 
 
 <!--Menu Lateral-->

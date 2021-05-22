@@ -21,7 +21,10 @@ class clases extends conexion{  //Se crea la clase clases que hereda de conexion
 
   public function validar($dato1){ //Funcion para consultar si un usuario existe en la base de datos SOLO por medio del correo registrado
 
-    $sql="select * from usuario where correo_usuario='$dato1'";
+    $sql="SELECT * FROM usuario 
+    INNER JOIN rol ON rol.id_rol = usuario.rol_id_rol
+    INNER JOIN persona ON persona.num_documento = usuario.persona_num_documento 
+    where correo_usuario='$dato1'";
     $consulta = $this->conexion->query($sql) or die('Usuario no existe');
     return $consulta;
 
@@ -34,6 +37,24 @@ class clases extends conexion{  //Se crea la clase clases que hereda de conexion
     INNER JOIN grupo_sanguineo ON persona.grupo_sanguineo_id_grupo_sanguineo=grupo_sanguineo.id_grupo_sanguineo
     INNER JOIN tipo_persona ON persona.tipo_persona_id_tipo_persona=tipo_persona.id_tipo_persona
     INNER JOIN genero ON persona.genero_id_genero=genero.id_genero";
+    $consulta = $this->conexion->query($sql) or die('Usuario no existe');
+    return $consulta;
+
+  }
+
+  public function listarUsuarios(){ //Funcion para listar los usuarios del sistema
+
+    $sql="SELECT * FROM usuario
+    INNER JOIN persona ON persona.num_documento=usuario.persona_num_documento
+    INNER JOIN rol ON rol.id_rol=usuario.rol_id_rol";
+    $consulta = $this->conexion->query($sql) or die('Usuario no existe');
+    return $consulta;
+
+  }
+
+  public function listarHistorialAdmin(){ //Funcion para listar el historial general
+
+    $sql="SELECT * FROM historial_ingreso";
     $consulta = $this->conexion->query($sql) or die('Usuario no existe');
     return $consulta;
 

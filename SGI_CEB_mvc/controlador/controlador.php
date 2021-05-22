@@ -21,7 +21,22 @@ if(isset($_REQUEST['login'])) {  //Entrada de datos del form ingresar
         if (password_verify($password, $row['clave_usuario'])) { //Se usa el metodo password_verify para desencriptar la contraseña, tambien se llama un campo del array row.
             session_start(); 
             $_SESSION["validar"]="true"; //se guarde este campo en la variable sesion para validar siempre la sesion en el archivo seguridad
-            header("location:../vista/admin/indexadmin.php");
+
+            $_SESSION["usuario"]=$row; // Esta linea sirve para guardar la informacion del usuario en la variable sesion, se esta guardando un arreglo dentro de otro arreglo. hay dos posiciones en session, la posicion validar y la posicion usuario, en usuario hay varios campos mas, en validar solo hay uno.
+
+            //Seccion donde se conprueba que rol tiene el usuario.
+
+            if ($row['rol_id_rol']==1) {//Rol de admin
+
+                header("location:../vista/admin/indexadmin.php");
+                
+            }
+            else {
+                
+                header("location:../vista/indexUsuario.php");
+            }
+
+            
 
         }
         else {
@@ -36,6 +51,21 @@ if(isset($_REQUEST['login'])) {  //Entrada de datos del form ingresar
     $objeto2 = new clases;
 
     $resListado = $objeto2->listarPersonas();
+
+
+    //Seccion de listar usuarios para el Administrador
+
+    $objeto3 = new clases;
+
+    $resListado2 = $objeto3->listarUsuarios();
+
+
+    //Seccion de listar la gestion de historial
+
+    $objeto4 = new clases;
+
+    $resListadoAdminHistorial = $objeto4->listarHistorialAdmin();
+    
 
     
 
