@@ -2,13 +2,47 @@
 
 include($_SERVER['DOCUMENT_ROOT']."/SGI_CEB_mvc/modelo/clases.php");
 
+$objeto = new clases;
+
+//Seccion Crear persona
+
+if (isset($_REQUEST['crearPersona'])) {
+    $tipo_documento=$_REQUEST['tipo_documento'];
+    $num_documento=$_REQUEST['num_documento'];
+    $primer_nombre=$_REQUEST['Primer_Nombre'];
+    $segundo_nombre=$_REQUEST['Segundo_Nombre'];
+    $primer_apellido=$_REQUEST['Primer_Apellido'];
+    $segundo_apellido=$_REQUEST['Segundo_Apellido'];
+    $fecha_nacimiento=$_REQUEST['fecha_nacimiento'];
+    $grupo_sanguineo=$_REQUEST['grupo_sanguineo'];
+    $tipo_persona=$_REQUEST['tipo_persona'];
+    $genero=$_REQUEST['genero'];
+    $resPersona= $objeto->validarPersona($num_documento);
+    
+    if ($resPersona->num_rows==0) {
+        
+        $objeto->crearPersona($num_documento, $primer_nombre, $segundo_nombre, $primer_apellido, $segundo_apellido, $fecha_nacimiento, $grupo_sanguineo, $tipo_documento, $tipo_persona, $genero);
+        header("location:../vista/admin/gestionarusuarios.php");
+    }
+    else {
+        echo"<script>alert('Esta persona ya esta en el sistema'); window.history.back();</script>";
+       
+    }
+
+}
+
+
+
+
+
+//Seccion Login
 
 if(isset($_REQUEST['login'])) {  //Entrada de datos del form ingresar
     
     $correo_usuario=$_REQUEST['correo_usuario']; //Guardar la informacion recibida en variables php
     $password=$_REQUEST['clave_usuario'];
 
-    $objeto = new clases; //Se crea el objeto clases para usar sus funciones
+    //Llamamos las funciones del objeto
     
     $res=$objeto->validar($correo_usuario); //Se llama la funcion "validar" con su parametro y se guarda en la variable $res
 
@@ -45,26 +79,87 @@ if(isset($_REQUEST['login'])) {  //Entrada de datos del form ingresar
     }
 }
 
+//Seccion Editar Persona
 
-    //Seccion de listar personas para el Administrador
+if (isset($_GET['num_documento'])) {
+    $num_documento = $_GET['num_documento'];
+    $res = $objeto->validarPersona($num_documento);
+    $row = $res->fetch_array();
 
-    $objeto2 = new clases;
+    $tipo_documento=$row['tipo_documento_id_tipo_documento'];
+    $num_documento=$row['num_documento'];
+    $primer_nombre=$row['primer_nombre'];
+    $segundo_nombre=$row['segundo_nombre'];
+    $primer_apellido=$row['primer_apellido'];
+    $segundo_apellido=$row['segundo_apellido'];
+    $fecha_nacimiento=$row['fecha_nacimiento'];
+    $grupo_sanguineo=$row['grupo_sanguineo_id_grupo_sanguineo'];
+    $tipo_persona=$row['tipo_persona_id_tipo_persona'];
+    $genero=$row['genero_id_genero'];
+}
 
-    $resListado = $objeto2->listarPersonas();
+
+if (isset($_REQUEST['editarPersona'])) {
+    $tipo_documento=$_REQUEST['tipo_documento'];
+    $num_documento=$_REQUEST['num_documento'];
+    $primer_nombre=$_REQUEST['Primer_Nombre'];
+    $segundo_nombre=$_REQUEST['Segundo_Nombre'];
+    $primer_apellido=$_REQUEST['Primer_Apellido'];
+    $segundo_apellido=$_REQUEST['Segundo_Apellido'];
+    $fecha_nacimiento=$_REQUEST['fecha_nacimiento'];
+    $grupo_sanguineo=$_REQUEST['grupo_sanguineo'];
+    $tipo_persona=$_REQUEST['tipo_persona'];
+    $genero=$_REQUEST['genero'];
+    $num_documentoGET= $_GET['num_documento'];
+    
+
+    $resPersona= $objeto->actualizarPersona($num_documento, $primer_nombre, $segundo_nombre, $primer_apellido, $segundo_apellido, $fecha_nacimiento, $grupo_sanguineo, $tipo_documento, $tipo_persona, $genero, $num_documentoGET);
+    if ($resPersona==true) {
+        echo "<script>alert('Usuario editado correctamente'); window.location='../vista/admin/gestionarusuarios.php';</script>";
+    }
+    else {
+        echo "<script>alert('error')</script>";
+       
+    }
+
+}
 
 
-    //Seccion de listar usuarios para el Administrador
-
-    $objeto3 = new clases;
-
-    $resListado2 = $objeto3->listarUsuarios();
 
 
-    //Seccion de listar la gestion de historial
+    
 
-    $objeto4 = new clases;
+    //Llamamos las funciones del objeto
 
-    $resListadoAdminHistorial = $objeto4->listarHistorialAdmin();
+    $resListado = $objeto->listarPersonas(); //Seccion de listar personas para el Administrador
+
+    $resListado2 = $objeto->listarUsuarios(); //Seccion de listar usuarios para el Administrador
+
+    $resListadoAdminHistorial = $objeto->listarHistorialAdmin(); //Seccion de listar la gestion de historial
+
+    $resListarTipoDocumento = $objeto->traeTipoDocumento(); //Seccion listar los tipos de documentos
+
+    $resListarTipoPersona = $objeto->traeTipoPersona(); //Seccion listar los tipos de persona
+
+    $resListarGrupoSanguineo = $objeto->traeGrupoSanguineo(); //Seccion listar los grupos sanguineos
+
+    $resListarGenero = $objeto->traeGenero(); //Seccion listar los generos
+
+    
+
+   
+
+    
+
+   
+
+
+    
+
+
+    
+
+    
     
 
     

@@ -54,7 +54,7 @@
             <td><?php echo $campo["tipo_documento"]; ?></td>
             <td><?php echo $campo["grupo_sanguineo"]; ?></td>
             <td><?php echo $campo["tipo_persona"]; ?></td>
-            <td><a href="#">Editar</a></td>
+            <td><a href="editarPersona.php?num_documento=<?php echo $campo['num_documento']?>">Editar</a></td>
 			<td><a href="#">Inactivar</a></td>
         </tr>
 
