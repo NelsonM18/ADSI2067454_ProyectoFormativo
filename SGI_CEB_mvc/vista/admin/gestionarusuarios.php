@@ -5,6 +5,7 @@
 
 
 
+
 	<div class="contenedor" id="contenedor_chingon">
 	<section id="seccion_inicio">
 
@@ -54,8 +55,8 @@
             <td><?php echo $campo["tipo_documento"]; ?></td>
             <td><?php echo $campo["grupo_sanguineo"]; ?></td>
             <td><?php echo $campo["tipo_persona"]; ?></td>
-            <td><a href="editarPersona.php?num_documento=<?php echo $campo['num_documento']?>">Editar</a></td>
-			<td><a href="#">Inactivar</a></td>
+            <td><a href="editarPersona.php?num_documentoEDIT=<?php echo $campo['num_documento']?>">Editar</a></td>
+			<td><a href="gestionarUsuarios.php?num_documentoINAC=<?php echo $campo['num_documento']?>" >Inactivar</a></td>
         </tr>
 
         <?php } ?>

@@ -1,3 +1,4 @@
+
 <?php
 
 include($_SERVER['DOCUMENT_ROOT']."/SGI_CEB_mvc/modelo/clases.php");
@@ -26,6 +27,63 @@ if (isset($_REQUEST['crearPersona'])) {
     }
     else {
         echo"<script>alert('Esta persona ya esta en el sistema'); window.history.back();</script>";
+       
+    }
+
+}
+
+
+//Seccion Crear Usuario
+
+if (isset($_REQUEST['crearUsuario'])) {
+    $correoInstitucional=$_REQUEST['correoI'];
+    $claveInstitucional=$_REQUEST['claveI'];
+    $rol=$_REQUEST['rol'];
+    $num_documento=$_REQUEST['num_documento'];
+
+    $claveInstitucional=password_hash($claveInstitucional,PASSWORD_DEFAULT);
+    
+    $resUsuario= $objeto->validarPersona($num_documento);
+    
+    if ($resUsuario->num_rows==1) {
+        
+        $objeto->crearUsuario($correoInstitucional, $claveInstitucional, $rol, $num_documento);
+        header("location:../vista/admin/gestionarU.php");
+    }
+    else {
+        echo"<script>alert('Esta persona no esta en el sistema'); window.history.back();</script>";
+       
+    }
+
+}
+
+//Seccion Editar Usuario
+
+if (isset($_GET['num_documentoEDIT_U'])) {
+    $num_documento = $_GET['num_documentoEDIT_U'];
+    $res = $objeto->validarUsuario($num_documento);
+    $row = $res->fetch_array();
+
+    $num_documento=$row['persona_num_documento'];
+    $correo_usuario=$row['correo_usuario'];
+    $rol=$row['id_rol'];
+    
+}
+
+
+if (isset($_REQUEST['editarUsuario'])) {
+    $num_documento=$_REQUEST['num_documento'];
+    $correo_usuario=$_REQUEST['correoI'];
+    $rol=$_REQUEST['rol'];
+   
+    
+
+    $resUsuario= $objeto->actualizarUsuario($correo_usuario,$rol,$num_documento);
+    if ($resUsuario==true) {
+        echo "<script>alert('Usuario editado correctamente'); window.location='../vista/admin/gestionarU.php';</script>";
+    }
+    else {
+        echo "<script>alert('error')</script>";
        
     }
 
@@ -81,8 +139,8 @@ if(isset($_REQUEST['login'])) {  //Entrada de datos del form ingresar
 
 //Seccion Editar Persona
 
-if (isset($_GET['num_documento'])) {
-    $num_documento = $_GET['num_documento'];
+if (isset($_GET['num_documentoEDIT'])) {
+    $num_documento = $_GET['num_documentoEDIT'];
     $res = $objeto->validarPersona($num_documento);
     $row = $res->fetch_array();
 
@@ -124,6 +182,16 @@ if (isset($_REQUEST['editarPersona'])) {
 
 }
 
+//Seccion Inactivar Persona
+
+if (isset($_GET['num_documentoINAC'])) {
+
+    $num_documentoGET= $_GET['num_documentoINAC'];
+    $objeto->inactivarPersona($num_documentoGET);
+    echo "<script>alert('Usuario inactivado correctamente'); window.location='../admin/gestionarusuarios.php';</script>";
+
+}
+
 
 
 
@@ -144,6 +212,8 @@ if (isset($_REQUEST['editarPersona'])) {
     $resListarGrupoSanguineo = $objeto->traeGrupoSanguineo(); //Seccion listar los grupos sanguineos
 
     $resListarGenero = $objeto->traeGenero(); //Seccion listar los generos
+
+    $resListarRoles = $objeto->traeRoles(); //Seccion listar roles
 
     
 

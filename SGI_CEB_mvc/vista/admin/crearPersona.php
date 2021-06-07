@@ -1,7 +1,6 @@
 <?php include("../../controlador/controlador.php"); ?>
-<?php include("../../controlador/seguridad.php"); ?>
 <?php require_once 'includes/cabeceraConSesionAdmin.php';?>
-<script src="assets/scripts/validarCrearPersona.js"></script>
+<script type="text/javascript" src="assets/scripts/validarCrearPersona.js"></script>
 
 
 	<div class="contenedor" id="contenedor_chingon">
@@ -24,7 +23,7 @@
 
         <label for="">Tipo de Documento</label>
         <select name="tipo_documento" id="tipo_documento" required>
-            <option selected value="0">Elige una opción</option> 
+            <option value="0">Elige una opción</option> 
             <?php 
                 while($campo = $resListarTipoDocumento->fetch_array()){    ?>
 
@@ -53,7 +52,7 @@
 
         <label for="">Grupo Sanguineo</label>
         <select name="grupo_sanguineo" id="grupo_sanguineo" required>
-            <option selected value="0">Elige una opción</option> 
+            <option value="0">Elige una opción</option> 
                     <?php 
                         while($campo = $resListarGrupoSanguineo->fetch_array()){    ?>
 
@@ -64,7 +63,7 @@
 
         <label for="">Tipo Persona</label>
         <select name="tipo_persona" id="tipo_persona" required>
-            <option selected value="0">Elige una opción</option> 
+            <option value="0">Elige una opción</option> 
                 <?php 
                     while($campo = $resListarTipoPersona->fetch_array()){    ?>
 
@@ -75,7 +74,7 @@
 
         <label for="">Género</label>
         <select name="genero" id="genero" required>
-            <option selected value="0">Elige una opción</option> 
+            <option value="0">Elige una opción</option> 
                         <?php 
                             while($campo = $resListarGenero->fetch_array()){    ?>
 
