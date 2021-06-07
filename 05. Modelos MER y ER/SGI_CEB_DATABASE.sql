@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-06-2021 a las 23:58:07
+-- Tiempo de generación: 07-06-2021 a las 19:20:21
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.1
 
@@ -220,8 +220,9 @@ CREATE TABLE `persona` (
 
 INSERT INTO `persona` (`num_documento`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `fecha_nacimiento`, `grupo_sanguineo_id_grupo_sanguineo`, `tipo_documento_id_tipo_documento`, `tipo_persona_id_tipo_persona`, `genero_id_genero`, `estado_id_estado`) VALUES
 ('1000000000', 'Laura', 'Maria', 'Torres', 'Leon', '1970-04-11', 1, 1, 2, 2, 1),
-('1000111111', 'Pedro', 'Andres', 'Gomez', 'Garzon', '2002-03-15', 1, 2, 1, 1, 1),
+('1000111111', 'Pedro', 'Andres', 'Gomez', 'Garzon', '2002-03-15', 4, 2, 1, 1, 1),
 ('1000123123', 'admin_ceb', '', 'admin_ceb', '', '2001-09-13', 1, 1, 1, 1, 1),
+('1000590174', 'David', 'Fernando', 'Gonzalez', 'Garcia', '2001-09-13', 7, 1, 1, 1, 1),
 ('1193518889', 'Nelson', 'Felipe', 'Merlano', 'Dominguez', '2001-10-18', 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
@@ -283,7 +284,8 @@ CREATE TABLE `tipo_persona` (
 
 INSERT INTO `tipo_persona` (`id_tipo_persona`, `tipo_persona`) VALUES
 (1, 'Institucional'),
-(2, 'Externo');
+(2, 'Externo'),
+(3, 'Estudiante');
 
 -- --------------------------------------------------------
 
@@ -304,7 +306,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `correo_usuario`, `clave_usuario`, `rol_id_rol`, `persona_num_documento`) VALUES
-(1, 'admin@gmail.com', '$2y$10$b9LPf8rEcVpMfdaed0rbkeatDmQ4gqIoP1XUm.Cx/9fyIya.B.Fy6', 1, '1000123123');
+(1, 'admin@gmail.com', '$2y$10$b9LPf8rEcVpMfdaed0rbkeatDmQ4gqIoP1XUm.Cx/9fyIya.B.Fy6', 1, '1000123123'),
+(3, 'nelson@gmail.com', '$2y$10$0Tfymsr.yvYXbSVyB8Ab2ORVZPqQk8LtYKUXMM9GpkfMfiw.JbPv6', 1, '1193518889'),
+(4, 'david@gmail.com', '$2y$10$1lJfXvzfg0hmxmHEi9QU4utDxeh2d5.vLxp1myz5ypcshRZi8K.7W', 3, '1000590174');
 
 --
 -- Índices para tablas volcadas
@@ -427,13 +431,13 @@ ALTER TABLE `historial_ingreso`
 -- AUTO_INCREMENT de la tabla `tipo_persona`
 --
 ALTER TABLE `tipo_persona`
-  MODIFY `id_tipo_persona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_tipo_persona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
