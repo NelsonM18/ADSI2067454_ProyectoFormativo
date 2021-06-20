@@ -17,13 +17,22 @@ class clases extends conexion{  //Se crea la clase clases que hereda de conexion
     return $consulta;
   }
 
-  public function inactivarPersona($num_documentoGET){ //Funcion de la clase Clases que sirve para insertar una persona nuevo a la base de datos
+  public function inactivarPersona($num_documentoGET){ //Funcion de la clase Clases que sirve para inactivar una persona nuevo a la base de datos
 
     
     $sql = "UPDATE `persona` SET estado_id_estado = '2' WHERE num_documento='$num_documentoGET';";
     $consulta = $this->conexion->query($sql) or die('Error');
     return $consulta;
   }
+
+  public function activarPersona($num_documentoGET){ //Funcion de la clase Clases que sirve para activar una persona nuevo a la base de datos
+
+    
+    $sql = "UPDATE `persona` SET estado_id_estado = '1' WHERE num_documento='$num_documentoGET';";
+    $consulta = $this->conexion->query($sql) or die('Error');
+    return $consulta;
+  }
+
 
   public function actualizarPersona($num_documento, $primer_nombre, $segundo_nombre, $primer_apellido, $segundo_apellido, $fecha_nacimiento, $grupo_sanguineo, $tipo_documento, $tipo_persona, $genero, $num_documentoGET){ //Funcion de la clase Clases que sirve para insertar una persona nuevo a la base de datos
 
@@ -70,12 +79,23 @@ class clases extends conexion{  //Se crea la clase clases que hereda de conexion
 
   }
 
-  public function validarUsuario($dato1){ //Funcion para consultar si un usuario existe en la base de datos SOLO por medio del correo registrado
+  public function validarUsuario($dato1){ //Funcion para consultar si un usuario existe en la base de datos
 
     $sql="SELECT * FROM usuario 
     INNER JOIN rol ON rol.id_rol = usuario.rol_id_rol
     INNER JOIN persona ON persona.num_documento = usuario.persona_num_documento 
     where persona_num_documento='$dato1'";
+    $consulta = $this->conexion->query($sql) or die('Usuario no existe');
+    return $consulta;
+
+  }
+
+  public function validarUsuario2($dato1,$dato2){ //Funcion para consultar si un usuario existe en la base de datos
+
+    $sql="SELECT * FROM usuario 
+    INNER JOIN rol ON rol.id_rol = usuario.rol_id_rol
+    INNER JOIN persona ON persona.num_documento = usuario.persona_num_documento 
+    where persona_num_documento='$dato1' OR correo_usuario='$dato2'";
     $consulta = $this->conexion->query($sql) or die('Usuario no existe');
     return $consulta;
 
@@ -87,11 +107,27 @@ class clases extends conexion{  //Se crea la clase clases que hereda de conexion
     INNER JOIN tipo_documento ON persona.tipo_documento_id_tipo_documento=tipo_documento.id_tipo_documento
     INNER JOIN grupo_sanguineo ON persona.grupo_sanguineo_id_grupo_sanguineo=grupo_sanguineo.id_grupo_sanguineo
     INNER JOIN tipo_persona ON persona.tipo_persona_id_tipo_persona=tipo_persona.id_tipo_persona
-    INNER JOIN genero ON persona.genero_id_genero=genero.id_genero";
+    INNER JOIN genero ON persona.genero_id_genero=genero.id_genero
+    INNER JOIN estado ON persona.estado_id_estado=estado.id_estado WHERE persona.estado_id_estado = 1";
     $consulta = $this->conexion->query($sql) or die('Usuario no existe');
     return $consulta;
 
   }
+
+  public function listarPersonasINAC(){ //Funcion para listar las personas del sistema
+
+    $sql="SELECT * FROM persona
+    INNER JOIN tipo_documento ON persona.tipo_documento_id_tipo_documento=tipo_documento.id_tipo_documento
+    INNER JOIN grupo_sanguineo ON persona.grupo_sanguineo_id_grupo_sanguineo=grupo_sanguineo.id_grupo_sanguineo
+    INNER JOIN tipo_persona ON persona.tipo_persona_id_tipo_persona=tipo_persona.id_tipo_persona
+    INNER JOIN genero ON persona.genero_id_genero=genero.id_genero
+    INNER JOIN estado ON persona.estado_id_estado=estado.id_estado WHERE persona.estado_id_estado = 2";
+    $consulta = $this->conexion->query($sql) or die('Usuario no existe');
+    return $consulta;
+
+  }
+
+  
 
   public function listarUsuarios(){ //Funcion para listar los usuarios del sistema
 
@@ -148,6 +184,14 @@ class clases extends conexion{  //Se crea la clase clases que hereda de conexion
 
     $sql="SELECT * FROM rol;";
     $consulta = $this->conexion->query($sql) or die('Error al traer la información');
+    return $consulta;
+
+  }
+
+  public function insertarIngreso($num_documento, $comentario){ //Funcion para insertar ingreso
+
+    $sql = "INSERT INTO `historial_ingreso` (`id_historial`, `fecha_ingreso`, `hora_ingreso`, `comentario_historial`, `persona_num_documento`) VALUES (NULL, CURRENT_DATE(), CURRENT_TIME(), '$comentario', '$num_documento')";
+    $consulta = $this->conexion->query($sql) or die('Ingreso no insertado');
     return $consulta;
 
   }

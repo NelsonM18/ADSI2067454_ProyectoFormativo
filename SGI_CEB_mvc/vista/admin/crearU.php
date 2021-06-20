@@ -26,7 +26,17 @@
         </select><br><br>
 
       <label>Numero de Identificación: </label>
-      <input type="text" name="num_documento" value="" id="documento" placeholder="  Numero de documento"><br><br>
+
+      <select name="num_documento" id="documento" placeholder="  Selecione Un Rol">
+            <option selected value="">-Seleccione Una Opción-</option> 
+            <?php 
+                while($campo = $resListado->fetch_array()){    ?>
+
+                    <option value="<?php echo $campo['num_documento'] ?>"> <?php echo $campo['primer_nombre']." "; echo $campo['primer_apellido']." | ";echo $campo['num_documento'];?> </option>
+    
+                    <?php } ?>    
+        </select><br><br>
+
       <input type="submit" name="crearUsuario" id="registar" value="Registrar Correo">
     </form>
   </div>

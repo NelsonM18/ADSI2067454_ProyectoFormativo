@@ -17,6 +17,8 @@
     </section>
         <br>
 	<section id="seccion_tabla">
+
+    <a href="insertarIngreso.php"><button class="btn-crearU">Crear Ingreso</button></a>
         
     <table class="tablaIngresos">
     <tr>

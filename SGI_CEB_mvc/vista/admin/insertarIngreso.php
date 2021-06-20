@@ -1,4 +1,4 @@
-<?php require_once 'includes/cabeceraConSesion.php';?>
+<?php require_once 'includes/cabeceraConSesionAdmin.php';?>
 
 
 	<div class="contenedor" id="contenedor_inicio_historial">
@@ -16,7 +16,7 @@
 
 
 	<section id="seccion_insertar_ingresos">
-        <form action="../controlador/controlador.php" method="POST">
+        <form action="../../controlador/controlador.php" method="POST">
 
             <label for="num_documento" class="label_num_doc">Ingrese Número de Documento</label>
             <input type="text" class="inp-text" name="num_documento">

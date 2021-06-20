@@ -1,0 +1,34 @@
+#seccion_insertar_ingresos{
+    display: flex;
+    justify-content: center;
+
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.label_num_doc{
+    margin-top: 10%;
+    text-align: center;
+    Font-family: Arial;
+}
+
+.inp-text{
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+
+.btn-submit{
+    margin: 10px;
+    padding: 5%;
+    background-color: #D9A05B;
+    cursor: pointer;
+    text-decoration: none;
+
+}

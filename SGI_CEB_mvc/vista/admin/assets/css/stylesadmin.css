@@ -5,6 +5,7 @@
 @import url(styleHistorialAdmin.css);
 @import url(crearPersona.css);
 @import url(crearU.css);
+@import url(insertarIngreso.css);
 *{
     margin: 0;
     padding: 0;

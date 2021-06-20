@@ -44,11 +44,21 @@ if (isset($_REQUEST['crearUsuario'])) {
     $claveInstitucional=password_hash($claveInstitucional,PASSWORD_DEFAULT);
     
     $resUsuario= $objeto->validarPersona($num_documento);
+
+    $resUsuario2= $objeto->validarUsuario2($num_documento,$correoInstitucional);
     
+
     if ($resUsuario->num_rows==1) {
+
+        if ($resUsuario2->num_rows==1) {
+            echo"<script>alert('Este usuario ya esta registrado'); window.history.back();</script>";
+        }
+        else {
+            $objeto->crearUsuario($correoInstitucional, $claveInstitucional, $rol, $num_documento);
+             header("location:../vista/admin/gestionarU.php");
+        }
         
-        $objeto->crearUsuario($correoInstitucional, $claveInstitucional, $rol, $num_documento);
-        header("location:../vista/admin/gestionarU.php");
+        
     }
     else {
         echo"<script>alert('Esta persona no esta en el sistema'); window.history.back();</script>";
@@ -193,6 +203,40 @@ if (isset($_GET['num_documentoINAC'])) {
 }
 
 
+//Seccion Inactivar Usuario
+
+if (isset($_GET['num_documentoINAC_U'])) {
+
+    $num_documentoGET= $_GET['num_documentoINAC_U'];
+    $objeto->inactivarPersona($num_documentoGET);
+    echo "<script>alert('Usuario inactivado correctamente'); window.location='../admin/gestionarU.php';</script>";
+
+}
+
+
+//Seccion Activar persona
+
+if (isset($_GET['num_documentoACTIV'])) {
+
+    $num_documentoGET= $_GET['num_documentoACTIV'];
+    $objeto->activarPersona($num_documentoGET);
+    echo "<script>alert('Usuario activado correctamente'); window.location='../admin/gestionarusuarios.php';</script>";
+
+}
+
+
+
+//Seccion Insertar ingreso
+
+if (isset($_REQUEST['insertarIngreso'])) {
+
+    $num_documento= $_REQUEST['num_documento'];
+    $comentario= $_REQUEST['comentario'];
+    $objeto->insertarIngreso($num_documento, $comentario);
+    echo "<script>alert('Ingreso insertado correctamente');  window.location=document.referrer; </script>";
+
+}
+
 
 
     
@@ -214,6 +258,9 @@ if (isset($_GET['num_documentoINAC'])) {
     $resListarGenero = $objeto->traeGenero(); //Seccion listar los generos
 
     $resListarRoles = $objeto->traeRoles(); //Seccion listar roles
+
+    $resListarPersonasINAC = $objeto->listarPersonasINAC(); //Seccion de listar personas para el Administrador
+
 
     
 

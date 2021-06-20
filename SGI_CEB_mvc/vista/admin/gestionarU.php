@@ -47,7 +47,7 @@
           <td><?php echo $campo["primer_nombre"];?></td>
           <td><?php echo $campo["primer_apellido"];?></td>
           <td><a href="editarUsuario.php?num_documentoEDIT_U=<?php echo $campo['num_documento']?>">Editar</a></td>
-          <td><a href="#">Inactivar</a></td>
+          <td><a href="gestionarU.php?num_documentoINAC_U=<?php echo $campo['num_documento']?>">Inactivar</a></td>
         </tr>
 
       <?php } ?>
