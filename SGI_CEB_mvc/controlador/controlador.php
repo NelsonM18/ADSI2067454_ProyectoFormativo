@@ -1,5 +1,6 @@
-
 <?php
+
+session_start();
 
 include($_SERVER['DOCUMENT_ROOT']."/SGI_CEB_mvc/modelo/clases.php");
 
@@ -126,6 +127,9 @@ if(isset($_REQUEST['login'])) {  //Entrada de datos del form ingresar
 
             $_SESSION["usuario"]=$row; // Esta linea sirve para guardar la informacion del usuario en la variable sesion, se esta guardando un arreglo dentro de otro arreglo. hay dos posiciones en session, la posicion validar y la posicion usuario, en usuario hay varios campos mas, en validar solo hay uno.
 
+
+
+
             //Seccion donde se conprueba que rol tiene el usuario.
 
             if ($row['rol_id_rol']==1) {//Rol de admin
@@ -237,6 +241,45 @@ if (isset($_REQUEST['insertarIngreso'])) {
 
 }
 
+//Seccion Iditar ingreso
+
+if (isset($_GET['id_ingreso_EditarIngreso'])) {
+
+    $id_historialGET= $_GET['id_ingreso_EditarIngreso'];
+    $res = $objeto->traeHistorial_idHistorial($id_historialGET);
+    $row = $res->fetch_array();
+
+    $id_historial=$row['id_historial'];
+    $comentario=$row['comentario_historial'];
+
+
+}
+
+if (isset($_REQUEST['actualizarIngreso'])) {
+    $id_historialGET= $_GET['id_ingreso_EditarIngreso'];
+    $comentario=$_REQUEST['comentario'];
+   
+    
+    $resIngresoActualizado= $objeto->actualizarIngreso($comentario, $id_historialGET);
+    if ($resIngresoActualizado==true) {
+        echo "<script>alert('Ingreso editado correctamente'); window.location='../vista/admin/gestionarIngresos.php';</script>";
+    }
+    else {
+        echo "<script>alert('error')</script>";
+       
+    }
+
+}
+
+
+if (isset($_GET['id_ingreso_EliminarIngreso'])) {
+
+    $id_historialGET= $_GET['id_ingreso_EliminarIngreso'];
+    $res = $objeto->eliminarIngreso($id_historialGET);
+    echo "<script>alert('Ingreso eliminado correctamente'); window.location='gestionarIngresos.php';</script>";
+
+}
+
 
 
     
@@ -260,6 +303,17 @@ if (isset($_REQUEST['insertarIngreso'])) {
     $resListarRoles = $objeto->traeRoles(); //Seccion listar roles
 
     $resListarPersonasINAC = $objeto->listarPersonasINAC(); //Seccion de listar personas para el Administrador
+
+    $resListarHistorial = $objeto->traeHistorial($_SESSION["usuario"]["persona_num_documento"]); //Seccion de listar el historial
+
+
+
+
+
+    
+
+
+    
 
 
     

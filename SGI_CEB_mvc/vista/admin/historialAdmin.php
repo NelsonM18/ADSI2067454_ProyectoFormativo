@@ -20,6 +20,7 @@
 
 
 	<section id="seccion_tabla_historial">
+
         
     <table class="tablaHistorial">
         <tr>
@@ -27,16 +28,25 @@
             <th>Fecha Ingreso</th>
             <th>Comentario</th>          
         </tr>
+
+
+        <?php
+        while ($campo = $resListarHistorial->fetch_array()) { ?>
+
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>            
+        <td><?php echo $campo["hora_ingreso"]; ?></td>
+            <td><?php echo $campo["fecha_ingreso"]; ?></td>
+            <td><?php echo $campo["comentario_historial"]; ?></td>
         </tr>
+
+        <?php } ?>
+
     </table>
 
 	</section>
 
 	</div>
+
 
 	
 <?php require_once 'includes/footer.php';?>

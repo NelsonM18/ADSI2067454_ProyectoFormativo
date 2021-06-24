@@ -37,8 +37,8 @@
             <td><?php echo $campo["fecha_ingreso"]; ?></td>
             <td><?php echo $campo["comentario_historial"]; ?></td>
 
-                        <td><a href="#">Editar</a></td>
-						<td><a href="#">Inactivar</a></td>
+                        <td><a href="editarIngreso.php?id_ingreso_EditarIngreso=<?php echo $campo['id_historial']?>">Editar</a></td>
+						<td><a href="gestionarIngresos.php?id_ingreso_EliminarIngreso=<?php echo $campo['id_historial']?>">Eliminar</a></td>
         </tr>
 
         <?php } ?>
