@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0); //Se agrega para evitar que se muestren los Warnings
 session_start();
 
 include($_SERVER['DOCUMENT_ROOT']."/SGI_CEB_mvc/modelo/clases.php");
@@ -277,6 +277,37 @@ if (isset($_GET['id_ingreso_EliminarIngreso'])) {
     $id_historialGET= $_GET['id_ingreso_EliminarIngreso'];
     $res = $objeto->eliminarIngreso($id_historialGET);
     echo "<script>alert('Ingreso eliminado correctamente'); window.location='gestionarIngresos.php';</script>";
+
+}
+
+
+//Seccion consultar retardo estudiantil
+
+if (isset($_REQUEST['num_documento'])) {
+
+    $num_documento=$_REQUEST['num_documento'];
+    $resIngreso = $objeto->consultarRetardo($num_documento);
+
+    if ($resIngreso->num_rows==0) {
+        echo "<script>alert('Usted no tiene ningun retardo en su asistencia');window.location='../vista/retardosEstudiantes.php';</script>";
+    }
+    else {
+        
+        $_SESSION['resIngreso'] = $objeto->consultarRetardo($num_documento); //Guardar en la variable sesion el resultado de la consulta, como objeto mysqli
+        $a=0; //contador
+        while ($row =  $_SESSION['resIngreso']->fetch_array()) {  //Pasamos del objeto a un arreglo en row
+            
+
+            $_SESSION['resultado'][$a] = $row; //se crea una variable sesion resultado y uso el contador para guardar cada registro en un arreglo independiente.
+
+            $a = $a+1;
+        }
+
+        
+       
+        
+        echo "<script>alert('Retardos detectados');window.location='../vista/retardosEstudiantes.php';</script>";
+    }
 
 }
 

@@ -16,3 +16,7 @@
 .num_doc{
     text-align: center;
 }
+
+fieldset{
+	border: 1px solid black;
+}

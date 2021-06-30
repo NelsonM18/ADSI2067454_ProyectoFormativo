@@ -1,6 +1,5 @@
 <?php include("../../controlador/controlador.php"); ?>
 <?php require_once 'includes/cabeceraConSesionAdmin.php';?>
-<script type="text/javascript" src="assets/scripts/validarCrearPersona.js"></script>
 
 
 	<div class="contenedor" id="contenedor_chingon">
