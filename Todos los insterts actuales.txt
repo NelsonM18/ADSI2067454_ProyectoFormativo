@@ -1,0 +1,93 @@
+INSERT INTO `persona` (`num_documento`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `fecha_nacimiento`, `grupo_sanguineo_id_grupo_sanguineo`, `tipo_documento_id_tipo_documento`, `tipo_persona_id_tipo_persona`, `genero_id_genero`, `estado_id_estado`) VALUES
+('1000000000', 'Laura', 'Maria', 'Torres', 'Leon', '1970-04-11', 1, 1, 2, 2, 1),
+('1000111111', 'Codak', 'Andres', 'Gomez', 'Garzon', '2002-03-15', 1, 2, 3, 1, 1),
+('1000123123', 'admin_ceb', '', 'admin_ceb', '', '2001-09-13', 1, 1, 1, 1, 1),
+('1000590173', 'Manuel', '', 'Hernandez', '', '2021-06-23', 2, 1, 3, 1, 1),
+('1000590174', 'David', 'Fernando', 'Gonzalez', 'Garcia', '2001-09-13', 7, 1, 1, 1, 1),
+('1193518889', 'Nelson', 'Felipe', 'Merlano', 'Dominguez', '2001-10-18', 1, 1, 1, 1, 1),
+('12313', 'asd123', '', 'asdasd123', '', '2021-06-09', 3, 2, 1, 1, 1),
+('asd123', '123123', '', '123123', '', '2021-06-09', 2, 1, 1, 1, 2),
+('asdasdasd', '123123', '', 'asd1w2', '', '2021-06-10', 2, 2, 2, 1, 2);
+
+INSERT INTO `tipo_documento` (`id_tipo_documento`, `tipo_documento`) VALUES
+(1, 'Cedula'),
+(2, 'Tarjeta de identidad'),
+(3, 'Cedula de extranjeria'),
+(4, 'Pasaporte');
+
+INSERT INTO `tipo_persona` (`id_tipo_persona`, `tipo_persona`) VALUES
+(1, 'Institucional'),
+(2, 'Externo'),
+(3, 'Estudiante');
+
+INSERT INTO `estado` (`id_estado`, `estado`) VALUES
+(1, 'Activo'),
+(2, 'Inactivo');
+
+
+INSERT INTO `estudiante` (`id_estudiante`, `grado_academico_id_grado_academico`, `jornada_academica_id_jornada_academica`, `acudiente_id_acudiente`, `persona_num_documento`) VALUES
+(3, 1, 1, 1, '1000111111'),
+(6, 4, 1, 1, '1000590173');
+
+INSERT INTO `genero` (`id_genero`, `genero`) VALUES
+(1, 'Masculino'),
+(2, 'Femenino'),
+(3, 'Indefinido');
+
+
+INSERT INTO `grado_academico` (`id_grado_academico`, `grado_academico`) VALUES
+(1, 'primero'),
+(2, 'segundo'),
+(3, 'tercero'),
+(4, 'cuarto'),
+(5, 'quinto'),
+(6, 'sexto'),
+(7, 'septimo'),
+(8, 'octavo'),
+(9, 'noveno'),
+(10, 'decimo'),
+(11, 'once');
+
+
+INSERT INTO `grupo_sanguineo` (`id_grupo_sanguineo`, `grupo_sanguineo`) VALUES
+(1, 'A+'),
+(2, 'A-'),
+(3, 'B+'),
+(4, 'B-'),
+(5, 'AB+'),
+(6, 'AB-'),
+(7, 'O+'),
+(8, 'O-');
+
+
+INSERT INTO `historial_ingreso` (`id_historial`, `fecha_ingreso`, `hora_ingreso`, `comentario_historial`, `persona_num_documento`) VALUES
+(1, '2021-03-08', '06:10:24', 'asdasdsadd', '1000123123'),
+(11, '2021-06-19', '19:00:48', 'Ejemplo', '1000590174'),
+(12, '2021-06-19', '19:08:25', 'asdasd', '1000590174'),
+(23, '2021-06-29', '08:10:20', '', '1000111111'),
+(25, '2021-06-29', '08:11:26', 'example', '1000111111'),
+(26, '2021-06-28', '08:29:30', '', '1000590173');
+
+
+INSERT INTO `jornada_academica` (`id_jornada_academica`, `jornada_academica`) VALUES
+(1, 'mañana'),
+(2, 'tarde');
+
+
+INSERT INTO `rol` (`id_rol`, `rol`) VALUES
+(1, 'admin'),
+(2, 'vigilante'),
+(3, 'profesor'),
+(4, 'personal_admin');
+
+
+
+INSERT INTO `usuario` (`id_usuario`, `correo_usuario`, `clave_usuario`, `rol_id_rol`, `persona_num_documento`) VALUES
+(1, 'admin@gmail.com', '$2y$10$b9LPf8rEcVpMfdaed0rbkeatDmQ4gqIoP1XUm.Cx/9fyIya.B.Fy6', 1, '1000123123'),
+(3, 'nelson@gmail.com', '$2y$10$0Tfymsr.yvYXbSVyB8Ab2ORVZPqQk8LtYKUXMM9GpkfMfiw.JbPv6', 1, '1193518889'),
+(4, 'david@gmail.com', '$2y$10$1lJfXvzfg0hmxmHEi9QU4utDxeh2d5.vLxp1myz5ypcshRZi8K.7W', 3, '1000590174'),
+(8, 'codak@gmail.com', '$2y$10$ztdKB5zcWrBwFp6KSUHTH.uvH5dhsN7YQnMgIX6ZkFkAFxQgsVruG', 2, '1000111111');
+
+
+INSERT INTO `acudiente` (`id_acudiente`, `telefono_acudiente`, `direccion_acudiente`, `persona_num_documento`) VALUES
+(1, '301000000', 'kr 93 c sur #80-20', '1000000000');
