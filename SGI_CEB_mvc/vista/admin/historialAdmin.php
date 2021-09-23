@@ -1,5 +1,5 @@
 <?php require_once 'includes/cabeceraConSesionAdmin.php';?>
-<?php include("../../controlador/controlador.php"); ?>
+<?php include("../../controlador/controllerIngreso.php"); ?>
 <?php include("../../controlador/seguridad.php"); ?>
 
 

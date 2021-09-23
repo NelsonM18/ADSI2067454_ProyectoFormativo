@@ -1,13 +1,15 @@
 <?php require_once 'includes/cabeceraConSesionAdmin.php'; ?>
 <?php include("../../controlador/seguridad.php"); ?>
-<?php include("../../controlador/controlador.php"); ?>
+<?php include("../../controlador/controllerUsuario.php"); ?>
+<?php include("../../controlador/controllerPersona.php"); ?>
+
 
 
 <script type="text/javascript" src="assets/scripts/validarCrearUsuario.js"></script>
 
 <div id="contenedor_usuario">
   <div id="formulario">
-    <form action="../../controlador/controlador.php" method="post" onsubmit="return validar()">
+    <form action="../../controlador/controllerUsuario.php" method="post" onsubmit="return validar()">
       <h2>Crear Usuario </h2><br><br>
       <label>Correo Institucional: </label>
       <input type="email" name="correoI" id="correo" placeholder="   Ingrese Correo electronico" value=""><br><br>

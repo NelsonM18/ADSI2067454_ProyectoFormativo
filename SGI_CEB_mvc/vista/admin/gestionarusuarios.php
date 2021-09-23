@@ -1,4 +1,4 @@
-<?php include("../../controlador/controlador.php"); ?>
+<?php include("../../controlador/controllerPersona.php"); ?>
 <?php require_once 'includes/cabeceraConSesionAdmin.php';?>
 <?php include("../../controlador/seguridad.php"); ?>
 
@@ -64,15 +64,13 @@
     </table>
 
 	</section>
-
     <section id="seccion_tabla">
     <br>
     <br>
     <br>
     <br>
-
-
-    <b><p>PERSONAS INACTIVADAS</p></b>
+    <b><p>USUARIOS INACTIVADAS</p></b>
+    
     <table class="tablaUsuarios">
         <tr>
             <th>Primer Nombre</th>

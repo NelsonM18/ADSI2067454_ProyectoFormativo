@@ -1,4 +1,4 @@
-<?php include("../../controlador/controlador.php"); ?>
+<?php include("../../controlador/controllerPersona.php"); ?>
 <?php include("../../controlador/seguridad.php"); ?>
 <?php require_once 'includes/cabeceraConSesionAdmin.php';?>
 <script src="assets/scripts/validarCrearPersona.js"></script>
@@ -19,7 +19,7 @@
 	<section id="seccion_formulario">
 
 
-    <form action="../../controlador/controlador.php?num_documento=<?php echo $num_documento?>" method="POST" onsubmit="return validar()">
+    <form action="../../controlador/controllerPersona.php?num_documento=<?php echo $num_documento?>" method="POST" onsubmit="return validar()">
         <h1>Editar Persona</h1>
     
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-09-2021 a las 23:23:55
+-- Tiempo de generación: 24-09-2021 a las 00:50:40
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.1
 
@@ -137,7 +137,11 @@ INSERT INTO `historial_ingreso` (`id_historial`, `fecha_ingreso`, `hora_ingreso`
 (1, '2021-03-08', '06:10:24', 'asdasdsadd', '1000123123'),
 (11, '2021-06-19', '19:00:48', 'Ejemplo', '1000590174'),
 (12, '2021-06-19', '19:08:25', 'asdasd', '1000590174'),
-(23, '2021-06-29', '08:10:20', '', '1000111111');
+(23, '2021-06-29', '08:10:20', '', '1000111111'),
+(25, '2021-09-23', '17:28:43', 'Ejemplo3', '1000111111'),
+(26, '2021-09-23', '17:28:52', 'Ejemplo 5\r\n', '1000111111'),
+(28, '2021-09-23', '17:38:07', '', '1000111111'),
+(29, '2021-09-23', '17:38:27', 'este historial creado por profesor.', '1000111111');
 
 -- --------------------------------------------------------
 
@@ -185,6 +189,7 @@ CREATE TABLE `persona` (
 INSERT INTO `persona` (`num_documento`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `fecha_nacimiento`, `tipo_documento_id_tipo_documento`, `tipo_persona_id_tipo_persona`, `grupo_sanguineo_id_grupo_sanguineo`, `genero_id_genero`, `estado_id_estado`) VALUES
 ('1000000000', 'laura', 'Maria', 'Torres', 'Leon', '1970-04-11', 1, 2, 1, 2, 1),
 ('1000111111', 'Codak', 'Andres', 'Gomez', 'Garzon', '2002-03-15', 2, 3, 1, 1, 2),
+('1000111113', 'ejemploUsuario', '', 'a', '', '2021-09-22', 1, 1, 2, 1, 1),
 ('1000123123', 'admin_ceb', '', 'admin_ceb', '', '2001-09-13', 1, 1, 1, 1, 1),
 ('1000590174', 'David', 'Fernando', 'Gonzalez', 'Garcia', '2001-09-13', 1, 1, 7, 1, 1),
 ('1193518889', 'Nelson', 'Felipe', 'Merlano', 'Dominguez', '2001-10-18', 1, 1, 1, 1, 1),
@@ -373,10 +378,16 @@ ALTER TABLE `estudiante`
   MODIFY `id_estudiante` tinyint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT de la tabla `historial_ingreso`
+--
+ALTER TABLE `historial_ingreso`
+  MODIFY `id_historial` tinyint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` tinyint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_usuario` tinyint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas

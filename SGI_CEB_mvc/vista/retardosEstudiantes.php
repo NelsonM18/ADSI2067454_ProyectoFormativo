@@ -1,5 +1,5 @@
 <?php require_once 'includes/cabeceraSinSesion.php';?>
-<?php include("../controlador/controlador.php");?>
+<?php include_once("../controlador/controllerEstudiante.php");?>
 <?php session_destroy();?> <!-- Se agrega para eliminar la informacion despues de que se actualice la pagina -->
 
 
@@ -11,7 +11,7 @@
         <p>CONSULTAR RETARDOS</p>
         <br>
         <br>
-        <form action= "../controlador/controlador.php" method="POST">
+        <form action= "../controlador/controllerEstudiante.php" method="POST">
             <!--===== USUARIO =====-->
             <label for="num_documeto" class="num_doc">Número de Documento</label>
             <input type="text" name="num_documento" required>

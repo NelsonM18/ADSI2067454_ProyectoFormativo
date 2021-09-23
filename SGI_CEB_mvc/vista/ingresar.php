@@ -5,7 +5,7 @@
         <img  class="avatar" src="assets/img/ciudadela_avatar.png" alt="logo">
 
         <h1>SGI CEB</h1>
-        <form action= "../controlador/controlador.php" method="POST">
+        <form action= "../controlador/controllerLogin.php" method="POST">
             <!--===== USUARIO =====-->
             <label form="email">Correo</label>
             <input type="email" name="correo_usuario" required>

@@ -1,5 +1,5 @@
 <?php require_once 'includes/cabeceraConSesionAdmin.php';?>
-<?php include("../../controlador/controlador.php"); ?>
+<?php include("../../controlador/controllerIngreso.php"); ?>
 <?php include("../../controlador/seguridad.php"); ?>
 
 
@@ -18,7 +18,7 @@
 
 
 	<section id="seccion_insertar_ingresos">
-        <form action="../../controlador/controlador.php?id_ingreso_EditarIngreso=<?php echo $row['id_historial']?>" method="POST">
+        <form action="../../controlador/controllerIngreso.php?id_ingreso_EditarIngreso=<?php echo $row['id_historial']?>" method="POST">
             <label for="comentario" class="label_num_doc">Actualizar Comentario</label>
             <textarea name="comentario" id="" cols="30" rows="10" placeholder="Comentario" ><?php echo $comentario?></textarea>
             <input type="button" value="Consultar" class="btn-submit">

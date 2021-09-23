@@ -1,5 +1,10 @@
-<?php include("../../controlador/controlador.php"); ?>
+<?php include("../../controlador/controllerPersona.php"); ?>
 <?php require_once 'includes/cabeceraConSesionAdmin.php';?>
+<?php include("../../controlador/seguridad.php"); ?>
+
+
+<script type="text/javascript" src="assets/scripts/validarCrearPersona.js"></script>
+
 
 
 	<div class="contenedor" id="contenedor_chingon">
@@ -10,14 +15,14 @@
 			<br>
 			<p>ADMINISTRADOR</p>
 			<img src="assets/img/admin-icon.png" alt="admin-icon">
-			<p>GESTIÓN USUARIOS</p>
+			<p>GESTIÓN PERSONAS</p>
 			<br>
     </section>
         <br>
+
 	<section id="seccion_formulario">
 
-
-    <form action="../../controlador/controlador.php" method="POST" onsubmit="return validar()">
+    <form action="../../controlador/controllerPersona.php" method="POST">
         <h1>Crear Persona</h1>
 
         <label for="">Tipo de Documento</label>
@@ -32,7 +37,7 @@
         </select>
 
         <label for="">Numero de documento</label>
-        <input type="text" name="num_documento" id="num_documento" required></input>
+        <input type="text" name="num_documento" id="num_documento" ></input>
 
         <label for="">Primer Nombre</label>
         <input type="text" name="Primer_Nombre" id="Primer_Nombre" required></input>
@@ -82,7 +87,7 @@
                                 <?php } ?>    
         </select>
 
-        <input type="submit" value="Enviar" class="btn-submit" name="crearPersona" ></input>
+        <input type="submit" value="Enviar" class="btn-submit" name="crearPersona"  onclick="return validar()"></input>
 
     </form>
 

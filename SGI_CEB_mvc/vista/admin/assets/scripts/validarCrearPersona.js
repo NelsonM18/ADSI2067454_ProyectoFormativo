@@ -1,11 +1,11 @@
 function validar(){
-  var num_documento, Primer_Nombre, Segundo_Nombre, Primer_Apellido, Segundo_Apellido, fecha_naciemiento, grupo_sanguineo, tipo_documento, tipo_persona, genero, expresion;
+  var num_documento, Primer_Nombre, Segundo_Nombre, Primer_Apellido, Segundo_Apellido, fecha_nacimiento, grupo_sanguineo, tipo_documento, tipo_persona, genero, expresion;
   num_documento = document.getElementById("num_documento").value;
   Primer_Nombre = document.getElementById("Primer_Nombre").value;
   Segundo_Nombre = document.getElementById("Segundo_Nombre").value;
   Primer_Apellido = document.getElementById("Primer_Apellido").value;
   Segundo_Apellido = document.getElementById("Segundo_Apellido").value;
-  fecha_naciemiento = document.getElementById("fecha_naciemiento").value;
+  fecha_nacimiento = document.getElementById("fecha_nacimiento").value;
   grupo_sanguineo = document.getElementById("grupo_sanguineo").value;
   tipo_documento = document.getElementById("tipo_documento").value;
   tipo_persona = document.getElementById("tipo_persona").value;
@@ -15,7 +15,7 @@ function validar(){
   expresion = /\w+@\w+\.+[a-z]/; /*Esto es para que el correo quede bien escrito*/
   expresion2 = /^[A-Z]+$/i; 
 
-  if(num_documento === "" || Primer_Nombre === "" || Primer_Apellido === "" || fecha_naciemiento === "" || grupo_sanguineo === "0" || tipo_documento === "0" || genero === "0"){
+  if(num_documento === "" || Primer_Nombre === "" || Primer_Apellido === "" || fecha_nacimiento === "" || grupo_sanguineo === "0" || tipo_documento === "0" || genero === "0"){
       alert("Algunos campos son obligatorios");
       return false;
   }
