@@ -32,6 +32,10 @@
 				<a href="gestionarIngresos.php"><h3>Gestionar Ingresos</h3></a>
 				<a href="gestionarIngresos.php"><img src="assets/img/gestionUsuarioWallpaper.png" alt=""></a>
 			</article>
+			<article>
+				<a href="gestionarCirculares.php"><h3>Gestionar Circulares</h3></a>
+				<a href="gestionarCirculares.php"><img src="assets/img/circular.png" alt=""></a>
+			</article>
 
 	</section>
 

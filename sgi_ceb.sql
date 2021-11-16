@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-09-2021 a las 00:50:40
+-- Tiempo de generación: 16-11-2021 a las 22:24:55
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.1
 
@@ -24,13 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ciculares`
+-- Estructura de tabla para la tabla `circulares`
 --
 
-CREATE TABLE `ciculares` (
-  `id_cicular` tinyint(10) NOT NULL,
-  `circular` tinyblob NOT NULL
+CREATE TABLE `circulares` (
+  `id_circular` tinyint(10) NOT NULL,
+  `nombre_circular` varchar(60) NOT NULL,
+  `fecha_circular` date NOT NULL,
+  `comentario` varchar(60) NOT NULL,
+  `tipo` varchar(60) NOT NULL,
+  `ruta` varchar(200) NOT NULL,
+  `size` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `circulares`
+--
+
+INSERT INTO `circulares` (`id_circular`, `nombre_circular`, `fecha_circular`, `comentario`, `tipo`, `ruta`, `size`) VALUES
+(50, 'Circular de ejemplo', '2021-01-21', 'Esta es una prueba de una circular.', 'application/pdf', 'Circular_de_ejemplo.pdf', 6463),
+(51, 'Circular Ejemplo', '2021-01-21', 'Ejemplo de comentario.', 'application/pdf', 'Circular_de_ejemplo2.pdf', 6463),
+(52, 'Circular ejemplo', '2021-01-21', 'Comentario ejemplo.', 'application/pdf', 'Circular_de_ejemplo3.pdf', 6463);
 
 -- --------------------------------------------------------
 
@@ -286,10 +300,10 @@ INSERT INTO `usuario` (`id_usuario`, `correo_usuario`, `clave_usuario`, `pin_key
 --
 
 --
--- Indices de la tabla `ciculares`
+-- Indices de la tabla `circulares`
 --
-ALTER TABLE `ciculares`
-  ADD PRIMARY KEY (`id_cicular`);
+ALTER TABLE `circulares`
+  ADD PRIMARY KEY (`id_circular`);
 
 --
 -- Indices de la tabla `estado`
@@ -370,6 +384,12 @@ ALTER TABLE `usuario`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `circulares`
+--
+ALTER TABLE `circulares`
+  MODIFY `id_circular` tinyint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT de la tabla `estudiante`

@@ -1,5 +1,5 @@
 <?php
-include_once ("clases.php");
+include_once ("conexion.php");
 
 class estudiante extends conexion{
 

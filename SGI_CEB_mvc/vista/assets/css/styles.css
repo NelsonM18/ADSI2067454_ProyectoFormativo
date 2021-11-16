@@ -95,6 +95,7 @@ header a{
     padding-top: 40px;
     font-family: 'Open Sans', sans-serif;
     margin-top: 50%;
+    z-index: -1;
 }
 
 

@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>SGI CEB</title>
 	<link rel="stylesheet" type="text/css" href="../vista/assets/css/styles.css"/>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
