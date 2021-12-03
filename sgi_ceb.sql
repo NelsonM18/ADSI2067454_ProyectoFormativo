@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 16-11-2021 a las 22:24:55
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 8.0.1
+-- Servidor: localhost:3306
+-- Tiempo de generación: 03-12-2021 a las 21:38:33
+-- Versión del servidor: 10.5.12-MariaDB
+-- Versión de PHP: 7.3.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `sgi_ceb`
+-- Base de datos: `id18010578_sgi_ceb`
 --
 
 -- --------------------------------------------------------
@@ -44,7 +45,7 @@ CREATE TABLE `circulares` (
 INSERT INTO `circulares` (`id_circular`, `nombre_circular`, `fecha_circular`, `comentario`, `tipo`, `ruta`, `size`) VALUES
 (50, 'Circular de ejemplo', '2021-01-21', 'Esta es una prueba de una circular.', 'application/pdf', 'Circular_de_ejemplo.pdf', 6463),
 (51, 'Circular Ejemplo', '2021-01-21', 'Ejemplo de comentario.', 'application/pdf', 'Circular_de_ejemplo2.pdf', 6463),
-(52, 'Circular ejemplo', '2021-01-21', 'Comentario ejemplo.', 'application/pdf', 'Circular_de_ejemplo3.pdf', 6463);
+(65, 'akjhjlihj', '2003-12-21', 'aaa', 'application/pdf', 'Circular_de_ejemplo3.pdf', 6463);
 
 -- --------------------------------------------------------
 
@@ -148,14 +149,38 @@ CREATE TABLE `historial_ingreso` (
 --
 
 INSERT INTO `historial_ingreso` (`id_historial`, `fecha_ingreso`, `hora_ingreso`, `comentario_historial`, `persona_num_documento`) VALUES
-(1, '2021-03-08', '06:10:24', 'asdasdsadd', '1000123123'),
 (11, '2021-06-19', '19:00:48', 'Ejemplo', '1000590174'),
 (12, '2021-06-19', '19:08:25', 'asdasd', '1000590174'),
 (23, '2021-06-29', '08:10:20', '', '1000111111'),
 (25, '2021-09-23', '17:28:43', 'Ejemplo3', '1000111111'),
 (26, '2021-09-23', '17:28:52', 'Ejemplo 5\r\n', '1000111111'),
 (28, '2021-09-23', '17:38:07', '', '1000111111'),
-(29, '2021-09-23', '17:38:27', 'este historial creado por profesor.', '1000111111');
+(29, '2021-09-23', '17:38:27', 'este historial creado por profesor.', '1000111111'),
+(30, '2021-11-17', '12:45:24', 'a', '1000111111'),
+(31, '2021-11-17', '12:45:38', 'a', '3000590174'),
+(32, '2021-11-17', '12:46:17', 'a', '2000590174'),
+(34, '2021-11-17', '16:25:16', 'a', '1000590174'),
+(37, '2021-11-17', '16:34:36', 'a', '1000590174'),
+(38, '2021-11-17', '16:36:39', 'a', '1000590174'),
+(39, '2021-11-17', '16:36:50', 'a', '2000590174'),
+(40, '2021-11-17', '16:37:08', 'esto es con el scaner', '3000590174'),
+(41, '2021-11-17', '16:37:31', 'esto es con el scaner', '2000590174'),
+(42, '2021-11-17', '16:37:52', 'scaner', '1000590174'),
+(44, '2021-11-17', '16:39:24', 'este si es un admin scaner', '1000123123'),
+(45, '2021-11-17', '16:46:00', '', '1000590174'),
+(46, '2021-11-18', '11:04:38', 'ao tajhsdkff', '1000590174'),
+(47, '2021-11-18', '11:04:45', '', '1000590174'),
+(48, '2021-11-19', '21:54:17', '', '1000590174'),
+(49, '2021-11-25', '23:14:58', '', '1000590174'),
+(50, '2021-11-25', '23:15:27', 'Este fue desde el celular', '1000590174'),
+(52, '2021-12-03', '17:53:05', '', '1000590174'),
+(53, '2021-12-03', '17:53:21', 'este es desde el adminaaaaaa', '1000590174'),
+(54, '2021-12-03', '17:59:14', 'asdasd', '1000590174'),
+(55, '2021-12-03', '19:41:27', '', '2000590174'),
+(56, '2021-12-03', '21:10:41', '', '1000111111'),
+(57, '2021-12-03', '21:24:32', '', '1000590174'),
+(58, '2021-12-03', '21:27:49', '', '1000111111'),
+(59, '2021-12-03', '21:29:26', '', '1000111111');
 
 -- --------------------------------------------------------
 
@@ -205,9 +230,11 @@ INSERT INTO `persona` (`num_documento`, `primer_nombre`, `segundo_nombre`, `prim
 ('1000111111', 'Codak', 'Andres', 'Gomez', 'Garzon', '2002-03-15', 2, 3, 1, 1, 2),
 ('1000111113', 'ejemploUsuario', '', 'a', '', '2021-09-22', 1, 1, 2, 1, 1),
 ('1000123123', 'admin_ceb', '', 'admin_ceb', '', '2001-09-13', 1, 1, 1, 1, 1),
+('1000590170', 'daviduno', '', 'asdasd', '', '2021-11-12', 2, 1, 3, 1, 1),
 ('1000590174', 'David', 'Fernando', 'Gonzalez', 'Garcia', '2001-09-13', 1, 1, 7, 1, 1),
 ('1193518889', 'Nelson', 'Felipe', 'Merlano', 'Dominguez', '2001-10-18', 1, 1, 1, 1, 1),
-('12313', 'asd123', '', 'asdasd123', '', '2021-06-09', 2, 1, 3, 1, 1);
+('2000590174', 'Personal', '', 'Administrativo', '', '2021-11-18', 1, 1, 1, 1, 1),
+('3000590174', 'Vigilante', '', 'Colegio', '', '2021-11-09', 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -291,9 +318,11 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `correo_usuario`, `clave_usuario`, `pin_key`, `rol_id_rol`, `persona_num_documento`) VALUES
-(1, 'admin@gmail.com', '$2y$10$b9LPf8rEcVpMfdaed0rbkeatDmQ4gqIoP1XUm.Cx/9fyIya.B.Fy6', NULL, 1, '1000123123'),
+(1, 'admin@gmail.com', '$2y$10$b9LPf8rEcVpMfdaed0rbkeatDmQ4gqIoP1XUm.Cx/9fyIya.B.Fy6', '47691', 1, '1000123123'),
 (3, 'nelson@gmail.com', '$2y$10$0Tfymsr.yvYXbSVyB8Ab2ORVZPqQk8LtYKUXMM9GpkfMfiw.JbPv6', NULL, 1, '1193518889'),
-(4, 'david@gmail.com', '$2y$10$1lJfXvzfg0hmxmHEi9QU4utDxeh2d5.vLxp1myz5ypcshRZi8K.7W', NULL, 3, '1000590174');
+(4, 'david@gmail.com', '$2y$10$1lJfXvzfg0hmxmHEi9QU4utDxeh2d5.vLxp1myz5ypcshRZi8K.7W', '65332', 3, '1000590174'),
+(15, 'personal@gmail.com', '$2y$10$s4iJfM82jTdGguUoqZwPOOF56.usfS4l0FuCEhMAiZempqyl6uPDW', '75924', 4, '2000590174'),
+(16, 'vigilante@gmail.com', '$2y$10$ZoeFQZKSWsot2ToU6WtqyuXzgx8B.v6gmhqoAec4MNuqCEaEXovXW', NULL, 2, '3000590174');
 
 --
 -- Índices para tablas volcadas
@@ -389,7 +418,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `circulares`
 --
 ALTER TABLE `circulares`
-  MODIFY `id_circular` tinyint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id_circular` tinyint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT de la tabla `estudiante`
@@ -401,13 +430,13 @@ ALTER TABLE `estudiante`
 -- AUTO_INCREMENT de la tabla `historial_ingreso`
 --
 ALTER TABLE `historial_ingreso`
-  MODIFY `id_historial` tinyint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_historial` tinyint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` tinyint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_usuario` tinyint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Restricciones para tablas volcadas
